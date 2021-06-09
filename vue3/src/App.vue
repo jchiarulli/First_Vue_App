@@ -28,6 +28,17 @@ styling -->
       {{ index }} : {{ hero.name }}
     </li>
   </ul>
+  <!-- <input type="text" :value="newHero" :disabled="isDisabled"/> -->
+  <!-- <input type="text" :[attribute]="newHero" /> -->
+  <!-- <input type="text" v-model.trim="newHero" /> -->
+  <!-- <input type="text" v-model.lazy="newHero" /> -->
+  <!-- <textarea
+    name=""
+    id=""
+    cols="30"
+    rows="10"
+    v-model.number="newHero"
+  ></textarea> -->
   <p>Something else</p>
 </template>
 
@@ -39,6 +50,9 @@ export default {
       isShowing: false,
       count: 0,
       // dcHeros: ["Super Girl", "Flash", "Batman", "Arrow", "Superman"],
+      attribute: "newHero",
+      isDisabled: false,
+      newHero: "Robin",
       dcHeros: [
         { name: "Super Girl" },
         { name: "Flash" },
@@ -55,4 +69,82 @@ export default {
   //   }, 1000);
   // },
 };
+</script>
+
+<template>
+  <!-- <h1>DC Heros {{ herosCount }}</h1>
+
+  <h2>{{ fullname }}</h2>
+  <h2>{{ fname }} {{ lname }}</h2>
+
+  <p>{{ randC }}</p>
+  <p>{{ randC }}</p>
+  <p>{{ randC }}</p>
+  <p>{{ randM() }}</p>
+  <p>{{ randM() }}</p>
+  <p>{{ randM() }}</p>
+  <ul>
+    <li v-for="(hero, index) in dcHeros" :key="index">
+      {{ hero.name }}
+    </li>
+  </ul>
+  <form @submit.prevent="addHero">
+    <input type="text" v-model="newHero" placeholder="Type Hero Name Here" />
+    <button type="submit">Add Hero</button>
+  </form>
+  <button @click="setFullName">Set Full Name</button>
+  <small>Total Heros in the list is {{ herosCount }}</small> -->
+</template>
+
+<script>
+// export default {
+//   computed: {
+//     herosCount() {
+//       return this.dcHeros.length;
+//     },
+
+//     randC() {
+//       return this.dcHeros.length + Math.random();
+//     },
+
+//     fullname: {
+//       get() {
+//         return `Full name is ${this.fname} ${this.lname}`;
+//       },
+//       set(fullname) {
+//         const values = fullname.split(" ");
+//         this.fname = values[0];
+//         this.lname = values[1];
+//       },
+//     },
+//   },
+//   methods: {
+//     addHero() {
+//       if (this.newHero !== "") {
+//         this.dcHeros.unshift({ name: this.newHero });
+//         this.newHero = "";
+//       }
+//     },
+//     randM() {
+//       return Math.random();
+//     },
+//     setFullName() {
+//       this.fullname = "Bitfumes Tutorial";
+//     },
+//   },
+//   data() {
+//     return {
+//       newHero: "",
+//       fname: "Jason",
+//       lname: "Chiarulli",
+//       dcHeros: [
+//         { name: "Super Girl" },
+//         { name: "Flash" },
+//         { name: "Batman" },
+//         { name: "Arrow" },
+//         { name: "Superman" },
+//       ],
+//     };
+//   },
+// };
 </script>
